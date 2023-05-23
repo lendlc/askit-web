@@ -38,6 +38,7 @@ const Messenger = () => {
 
   const GetConversationMessages = async () => {
     if (conversations.length > 0) {
+      // eslint-disable-next-line react-hooks/rules-of-hooks
       const { data, code } = await useApi(
         "GET",
         `/chat/conversations/${conversations[selectedConversation]?.id}/`
@@ -53,6 +54,7 @@ const Messenger = () => {
     GetConversationList();
     GetConversationMessages();
     counter();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedConversation, sendToggle, tick]);
 
   return (
@@ -68,17 +70,22 @@ const Messenger = () => {
         }}
       >
         <DashboardNavbar />
-        <Container maxWidth={"lg"} spacing={2}>
+        <Container maxWidth={"lg"} 
+          spacing={2}>
           <Box sx={{ pt: 6 }}>
             <Grid container >
-              <Grid item lg={4} md={6} xl={3} xs={12}>
+              <Grid item 
+              // eslint-disable-next-line react/jsx-max-props-per-line
+              lg={4} md={6} xl={3} xs={12}>
                 <MessagesBar
                   conversations={conversations}
                   sx={{ height: "100%" }}
                   handleconvoselect={handleConversationSelect}
                 />
               </Grid>
-              <Grid item lg={8} md={12} xl={9} xs={12}>
+              <Grid item 
+              // eslint-disable-next-line react/jsx-max-props-per-line
+              lg={8} md={12} xl={9} xs={12}>
                 <RegistrationData
                   title={conversations[selectedConversation]?.chat_with}
                   msgs={messages.messages}

@@ -11,6 +11,7 @@ const Dashboard = () => {
   const [cardData, setCardData] = useState({})
 
   const getCardData = async () => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const { data, code } = await useApi('GET', '/admin/dashboard/cards/')
 
     if(code >= 200) {

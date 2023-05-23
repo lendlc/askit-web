@@ -23,6 +23,7 @@ export const CustomerListResults = ({ ...rest }) => {
   const [customers, setCustomers] = useState([])
 
   const getUser = async () => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const { data, code } = await useApi('GET', '/admin/users/')
 
     if(code >= 200) {

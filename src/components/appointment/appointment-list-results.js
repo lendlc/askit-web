@@ -22,10 +22,11 @@ export const AppointmentListResults = ({ ...rest }) => {
   const [appointments, setAppointments] = useState([])
 
   const getAppointments = async () => {
-    const { data, code } = await useApi('GET', '/admin/appointments/')
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const { data, code } = await useApi("GET", "/admin/appointments/");
 
-    if(code >= 200) {
-      setAppointments(data)
+    if (code >= 200) {
+      setAppointments(data);
     }
   }
 
