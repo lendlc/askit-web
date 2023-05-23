@@ -5,7 +5,7 @@ const useApi = async (method, path, req, header, auth = null) => {
   //const { data, code } = await useApi('GET/DELETE', '/sample_path/')
   //const { data, code } = await useApi('POST/PUT', '/sample_path/', {request data})
 
-  const base_url = 'http://127.0.0.1:8000/api/v1'
+  const base_url = "https://askitcapstone.live/api/v1";
   const ENDPOINT = `${base_url}${path}`
   const KEY = JSON.parse(localStorage.getItem('user'))?.token
 
